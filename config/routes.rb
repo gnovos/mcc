@@ -1,4 +1,14 @@
 Mcc::Application.routes.draw do
+    namespace :mercury do
+      resources :images
+    end
+
+  mount Mercury::Engine => '/'
+
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,4 +65,6 @@ Mcc::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+  root :to => "home#index"
 end
