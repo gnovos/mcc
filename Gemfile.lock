@@ -108,6 +108,9 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    markdown-rails (0.2.1)
+      rails
+      rdiscount (>= 1.6.8, < 2.0)
     mercury-rails (0.9.0)
       coffee-rails
       railties (~> 3.2)
@@ -176,8 +179,10 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.0.3)
+    rdiscount (1.6.8)
     rdoc (3.12)
       json (~> 1.4)
+    redcarpet (2.2.2)
     responders (0.9.3)
       railties (~> 3.1)
     rest-client (1.6.7)
@@ -198,7 +203,7 @@ GEM
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
       rspec-mocks (~> 2.12.0)
-    ruby-conf (2.6.4)
+    ruby-conf (2.7.1)
     sass (3.2.5)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -244,6 +249,7 @@ DEPENDENCIES
   inherited_resources
   jquery-rails
   jquery-ui-rails
+  markdown-rails
   mercury-rails
   mobj
   mustache
@@ -253,6 +259,7 @@ DEPENDENCIES
   paperclip
   pg
   rails (= 3.2.11)
+  redcarpet
   rr
   rspec
   rspec-rails

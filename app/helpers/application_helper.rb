@@ -8,10 +8,10 @@ module ApplicationHelper
   def edit_region(name, type="full", &block)
     content_tag(:div,
                 page_content(name) || (block ? capture(&block) : ""),
-                id: "page-region-#{name}",
+                id: "content:#{name}",
                 class: 'mercury-region',
                 data: { mercury: type,
-                        :"page-context" => page_context
+                        :context => page_context
                 })
   end
 

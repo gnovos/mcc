@@ -14,13 +14,16 @@
 ActiveRecord::Schema.define(:version => 20130116233637) do
 
   create_table "contents", :force => true do |t|
-    t.string   "name"
-    t.string   "context"
+    t.string   "region",     :default => "full"
+    t.string   "name",                           :null => false
+    t.string   "context",                        :null => false
     t.text     "content"
     t.string   "version"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
+
+  add_index "contents", ["name", "context", "version"], :name => "index_contents_on_name_and_context_and_version", :unique => true
 
   create_table "mercury_images", :force => true do |t|
     t.string   "image_file_name"

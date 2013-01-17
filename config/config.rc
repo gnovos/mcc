@@ -1,0 +1,30 @@
+
+#% ruby-conf
+
+RubyConf.define do
+
+  defaults do
+    markdown ->{
+      @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+                                            fenced_code_blocks: true,
+                                            strikethrough: true,
+                                            lax_spacing: true,
+                                            space_after_headers: true,
+                                            superscript: true,
+                                            autolink: true)
+    }
+  end
+
+  development(inherits:defaults) do
+  end
+  
+  staging(inherits:defaults) do
+  end
+
+  production(inherits:defaults) do
+  end
+
+  test_conf(inherits:defaults) do
+  end
+
+end

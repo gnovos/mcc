@@ -1,7 +1,20 @@
 class Content < ActiveRecord::Base
-  attr_accessible :name, :context, :content
+  attr_accessible :region, :name, :context, :content
 
-  def to_s
-    content.html_safe
+  after_initialize :init_version
+
+  def render(editing = false)
+    case region
+      when 'simple'
+        content
+      when 'markdown'
+        editing ? content : RUBYCONF.markdown.render(content).html_safe
+      else
+        content.html_safe
+    end
+  end
+
+  def init_version
+    self.version ||= Time.now.to_f.to_s
   end
 end

@@ -5,17 +5,20 @@ class ContentController < ApplicationController
 
     content = params[:content]
     content.each do |name, data|
-      name = name[/^page-region-(.*)$/, 1]
-      context = data['data']['page-context']
+      name = name[/^content:(.*)$/, 1]
+      region = data['type']
+      context = data['data']['context']
       value = data['value']
       #snippets = data['snippets']
       #attrs = data['attributes']
+      version = data['data']['version']
 
-      content = Content.create!(name:name, context:context, content:value)
+      content = Content.create!(region:region, name:name, context:context, content:value)
 
       ap name:name,
          context:context,
-         value:value
+         value:value,
+         version:version
     end
 
     render text: ""

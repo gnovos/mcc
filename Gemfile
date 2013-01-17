@@ -21,6 +21,8 @@ gem 'inherited_resources'
 
 gem 'mustache'
 gem 'mustache-rails', :require => 'mustache/railtie'
+gem 'redcarpet'
+gem 'markdown-rails'
 
 group :development do
   gem 'wirble'

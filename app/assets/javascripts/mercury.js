@@ -217,7 +217,7 @@ window.Mercury = {
     regions: {
       attribute: 'data-mercury',
       identifier: 'id',
-      dataAttributes: ['page-context']
+      dataAttributes: ['context', 'version']
       // determineType: function(region){},
       },
 
