@@ -21,8 +21,8 @@ class ApplicationController < ActionController::Base
   end
 
   def page_content(name, context = page_context)
-    matching = Content.where(name:name, context:context).order(:updated_at)
-    content = matching.last.try?.render(is_editing?)
+    #TODO add versioning
+    Content.where(name:name, context:context).order(:updated_at).last.try?.render(is_editing?)
   end
 
 end

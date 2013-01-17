@@ -10,9 +10,7 @@ module ApplicationHelper
                 page_content(name) || (block ? capture(&block) : ""),
                 id: "content:#{name}",
                 class: 'mercury-region',
-                data: { mercury: type,
-                        :context => page_context
-                })
+                data: { mercury: type, context: page_context })
   end
 
   def rich(name, &block)
