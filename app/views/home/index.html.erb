@@ -1,5 +1,10 @@
+<% page_context("home") %>
 
-<h1>This page is <a href="editor">editable</a></h1>
+<%= toggle_edit_link %>
+
+<br/>
+
+<br/>
 
 <%=	rich 'full' do %>
   Rich text goes here.
@@ -15,16 +20,4 @@
 
 <%=	markdown 'markdown' do %>
   Markdown goes here
-<% end %>
-
-<br/>
-
-<%=	snippet 'snippet' do %>
-  Snippets go here
-<% end %>
-
-<br/>
-
-<%=	image 'image' do %>
-  Images go here
 <% end %>

@@ -13,3 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+jQuery(window).on('mercury:ready', function() { Mercury.saveUrl = '/save'; });

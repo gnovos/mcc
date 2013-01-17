@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130116012710) do
+ActiveRecord::Schema.define(:version => 20130116233637) do
+
+  create_table "contents", :force => true do |t|
+    t.string   "name"
+    t.string   "context"
+    t.text     "content"
+    t.string   "version"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "mercury_images", :force => true do |t|
     t.string   "image_file_name"
