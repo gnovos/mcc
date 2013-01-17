@@ -23,6 +23,7 @@ gem 'mustache'
 gem 'mustache-rails', :require => 'mustache/railtie'
 gem 'redcarpet'
 gem 'markdown-rails'
+gem 'rails-backbone'
 
 group :development do
   gem 'wirble'

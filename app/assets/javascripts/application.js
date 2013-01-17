@@ -12,6 +12,22 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
+//= require backbone
+//= require backbone_rails_sync
+//= require backbone_datalink
+//= require backbone/mcc
 //= require_tree .
+
+var Application = Backbone.Model.extend({
+  initialize: function() {},
+  showEditor: function(editing) {
+    document.cookie = 'editing=' + editing;
+    top.location.href = top.location.href;
+  }
+});
+
+window.app = new Application();
+
 
 jQuery(window).on('mercury:ready', function() { Mercury.saveUrl = '/save'; });

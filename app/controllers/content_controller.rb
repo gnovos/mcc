@@ -14,11 +14,6 @@ class ContentController < ApplicationController
       version = data['data']['version']
 
       content = Content.create!(region:region, name:name, context:context, content:value)
-
-      ap name:name,
-         context:context,
-         value:value,
-         version:version
     end
 
     render text: ""

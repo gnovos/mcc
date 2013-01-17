@@ -15,14 +15,15 @@ class ApplicationController < ActionController::Base
   end
 
   def page_context(context = nil)
-    @page_contexts ||= []
+    @page_contexts ||= [params[:controller]]
     @page_contexts << context if context
     @page_contexts.last
   end
 
-  def page_content(name, context = page_context)
-    #TODO add versioning
-    Content.where(name:name, context:context).order(:updated_at).last.try?.render(is_editing?)
+  def page_content(name, context = page_context, version = nil)
+    where = {name:name, context:context}
+    where[:version] = version if version
+    Content.where(where).order(:updated_at).last.try?.render(is_editing?)
   end
 
 end

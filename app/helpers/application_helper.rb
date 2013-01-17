@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def toggle_edit_link
     link_to_function "Toggle Editor",
-                     "document.cookie='editing=#{is_editing? ? 'false' : 'true'}';top.location.href=top.location.href"
+                     "window.app.showEditor('#{is_editing? ? 'false' : 'true'}');"
   end
 
   def edit_region(name, type="full", &block)
