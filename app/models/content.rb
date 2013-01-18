@@ -9,6 +9,8 @@ class Content < ActiveRecord::Base
         content
       when 'markdown'
         editing ? content : RUBYCONF.markdown.render(content).html_safe
+      when 'image'
+        content
       else
         content.html_safe
     end

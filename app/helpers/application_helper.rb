@@ -30,7 +30,10 @@ module ApplicationHelper
   end
 
   def image(name, &block)
-    edit_region(name, 'image', &block)
+    image_tag((page_content(name) || (block ? capture(&block) : "")).strip,
+              id: "content:#{name}",
+              class: 'mercury-region',
+              data: { mercury: 'image', context: page_context })
   end
 
 end
