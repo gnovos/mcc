@@ -3,6 +3,7 @@ class Content < ActiveRecord::Base
 
   after_initialize :init_version
 
+  #TODO interpolate
   def render(editing = false)
     case region
       when 'simple'

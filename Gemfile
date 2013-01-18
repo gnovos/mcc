@@ -16,6 +16,7 @@ gem 'omniauth-facebook'
 
 gem 'awesome_print'
 gem 'cloudinary'
+gem 'dragonfly-cloudinary'
 gem 'activeadmin'
 gem 'inherited_resources'
 
