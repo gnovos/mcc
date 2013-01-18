@@ -24,10 +24,18 @@ var Application = Backbone.Model.extend({
   showEditor: function(editing) {
     document.cookie = 'editing=' + editing;
     top.location.href = top.location.href;
+  },
+  initEditor: function() {
+    Mercury.saveUrl = '/save';
+    Mercury.on('saved', function() {
+      window.app.showEditor('false');
+    });
+    Mercury.on('close', function() {
+      window.app.showEditor('false');
+    });
   }
 });
 
 window.app = new Application();
 
-
-jQuery(window).on('mercury:ready', function() { Mercury.saveUrl = '/save'; });
+Mercury.on('ready', window.app.initEditor);

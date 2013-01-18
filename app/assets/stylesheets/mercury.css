@@ -22,3 +22,7 @@
  *= require mercury/mercury
  */
 
+.mercury-primary-toolbar .mercury-close-button em {
+    background-image: url(/assets/mercury/close.png);
+    background-position: 50% 9px !important;
+}

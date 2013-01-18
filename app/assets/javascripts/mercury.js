@@ -92,6 +92,7 @@ window.Mercury = {
     // `Mercury.Toolbar.Button.contexts` and `Mercury.Toolbar.ButtonGroup.contexts`
     toolbars: {
       primary: {
+        close:                 ['', 'Close Editor'],
         save:                  ['Save', 'Save this page'],
         preview:               ['Preview', 'Preview this page', { toggle: true, mode: true }],
         sep1:                  ' ',
@@ -334,6 +335,7 @@ window.Mercury = {
     // button, or manually with `Mercury.trigger('action', {action: 'barrelRoll'})`
     globalBehaviors: {
       exit: function() { window.location.href = this.iframeSrc() },
+      close: function() { Mercury.trigger('close') },
       barrelRoll: function() { $('body').css({webkitTransform: 'rotate(360deg)'}) }
       },
 
